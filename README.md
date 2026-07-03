@@ -1,174 +1,258 @@
-<div align="center">
-  <br />
-    <a href="https://youtu.be/H5FAxTBuNM8" target="_blank">
-      <img src="public/readme/hero.webp" alt="Project Banner">
-    </a>
-  <br />
+# Acquisition Management API
 
-  <div>
-<img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Neon%20Postgres-2496ED?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Drizzle%20ORM-FFDF00?style=for-the-badge&logo=drizzle&logoColor=black"/>
+A production-ready backend platform for managing business acquisitions, listings, and deal workflows. The project focuses on scalable API development, containerized deployments, CI/CD automation, and operational best practices commonly used in modern software systems.
 
-  </div>
+## Overview
 
-  <h3 align="center">Build a Scalable Production Ready API</h3>
+This project was developed to explore the complete software delivery lifecycle, from API development to deployment and operational readiness. It includes authentication, business listing management, deal processing, database migrations, testing, logging, monitoring endpoints, and containerized deployment workflows.
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+The primary objective was to gain hands-on experience with backend engineering, DevOps practices, CI/CD automation, and production-focused system design.
 
-## 📋 <a name="table">Table of Contents</a>
+## Tech Stack
 
-1. ✨ [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+### Backend
+- Node.js
+- Express.js
 
-## 🚨 Tutorial
+### Database
+- PostgreSQL
+- Drizzle ORM
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+### DevOps & Infrastructure
+- Docker
+- GitHub Actions
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+### Security & Validation
+- JWT Authentication
+- Arcjet
+- Zod
 
-<a href="https://youtu.be/H5FAxTBuNM8" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+### Testing & Monitoring
+- Jest
+- SuperTest
+- Winston Logging
 
-## <a name="introduction">✨ Introduction</a>
+---
 
-Master DevOps by taking an API from code to production with Docker, Kubernetes, Git & GitHub, Warp, and CI/CD Actions! Build a scalable backend using Node.js, Express.js, Neon Postgres, and Drizzle ORM, while testing ensures reliability at every step. Learn to containerize services, orchestrate deployments, automate pipelines, and monitor applications—perfect for developers who want hands-on experience shipping robust, production-ready systems.
+## Key Features
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+### Authentication & Authorization
+- JWT-based authentication and authorization
+- Secure route protection
+- Role-based access control
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+### Business Listing Management
+- Create, update, delete, and retrieve acquisition listings
+- Manage listing lifecycle and ownership
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+### Deal Processing
+- Submit acquisition offers
+- Accept or reject deals
+- Track deal status and history
 
-- **[Arcjet](https://jsm.dev/dops25-arcjet)** is a developer-first security layer that enables you to protect your applications with minimal code. It offers features like bot protection, rate limiting, email validation, and defense against common attacks. Arcjet's SDK integrates seamlessly into your application, providing real-time security decisions without the need for additional infrastructure.
+### Database Management
+- PostgreSQL integration using Drizzle ORM
+- Migration-based schema management
 
+### Reliability & Operations
+- Structured application logging
+- Health monitoring endpoints
+- Input validation and centralized error handling
+- Containerized deployment using Docker
 
-- **[Docker](https://www.docker.com/)** is a leading containerization platform that allows you to package applications along with all their dependencies into portable, lightweight containers. This ensures consistent behavior across different environments, simplifies deployment, and makes scaling applications more efficient.  
+### CI/CD & Automation
+- Automated build and testing workflows
+- Deployment-ready project structure
+- Environment-based configuration management
 
-- **[Kubernetes](https://kubernetes.io/)** is an open-source orchestration system designed to automate the deployment, scaling, and management of containerized applications. It handles tasks like load balancing, self-healing, and rolling updates, making it essential for running applications reliably at scale.  
+---
 
-- **[Warp](https://jsm.dev/dops25-warp)** is a modern terminal built in Rust, optimized for developer productivity. It offers features like AI-assisted commands, easy collaboration, command history search, and a faster, more intuitive interface compared to traditional terminals.  
+## System Architecture
 
-- **[Node.js](https://nodejs.org/)** is a fast, event-driven JavaScript runtime built on Chrome’s V8 engine. It enables developers to build scalable, high-performance server-side applications and APIs using JavaScript on both the client and server side.  
+The application follows a layered architecture:
 
-- **[Express.js](https://expressjs.com/)** is a minimal and flexible Node.js web application framework. It provides robust features for building APIs and server-side applications, including routing, middleware support, and simplified request/response handling.  
+```text
+Client
+   │
+   ▼
+API Layer (Routes)
+   │
+   ▼
+Service Layer (Business Logic)
+   │
+   ▼
+Database Layer (Drizzle ORM + PostgreSQL)
+   │
+   ▼
+Storage
+```
 
-- **[Neon Postgres](https://jsm.dev/dops25-neon)** is a fully managed, serverless Postgres database designed for modern cloud applications. It offers autoscaling, branching for development workflows, and simplifies database management without compromising performance.  
+Supporting Components:
 
-- **[Drizzle ORM](https://orm.drizzle.team/)** is a TypeScript-first, lightweight ORM for SQL databases. It provides type safety, schema migrations, and an intuitive API for building reliable and maintainable database queries.  
+- JWT Authentication
+- Validation Middleware
+- Logging & Monitoring
+- Error Handling
+- CI/CD Pipelines
 
-- **[Zod](https://zod.dev/)** is a TypeScript-first schema validation library that ensures runtime type safety. It helps developers validate data structures, enforce strict type checks, and catch errors early in the development process.  
+This architecture improves maintainability, scalability, and troubleshooting.
 
-## <a name="features">🔋 Features</a>
+---
 
-👉 **Absolute Imports**: Clean import paths using `#` prefix aliases for more organized and readable code.  
+## Installation
 
-👉 **Business Listings**: Create, update, delete, and browse business listings efficiently.  
-
-👉 **Database Integration**: Integrate PostgreSQL with Drizzle ORM, including migrations for schema management.  
-
-👉 **Deal Management**: Create deals on listings, accept or reject offers, and track deal status.  
-
-👉 **Docker Support**: Full containerization with development and production environments for consistent deployment.  
-
-👉 **ESLint + Prettier**: Enforce code linting and formatting rules for cleaner, consistent code.  
-
-👉 **Health Monitoring**: Endpoint to check system health and monitor overall application status.  
-
-👉 **Hot Reload**: Development server automatically restarts on file changes for faster iteration.  
-
-👉 **Jest Testing**: Framework for unit and integration testing with SuperTest for HTTP endpoints.  
-
-👉 **Request Validation**: Validate all API inputs using Zod schemas to ensure data integrity.  
-
-👉 **Role-Based Access Control**: Implement admin and user roles with permission middleware for secure operations.  
-
-👉 **Structured Logging**: Winston-based logging throughout the application for better monitoring and debugging.  
-
-👉 **User Authentication & Authorization**: JWT-based authentication supporting signup, signin, and signout workflows.  
-
-👉 **User Management**: CRUD operations for user accounts, enabling easy administration and management.
-
-
-And many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
+### Clone Repository
 
 ```bash
-git clone https://github.com/adrianhajdin/acquisitions.git
+git clone https://github.com/<your-username>/acquisitions.git
 cd acquisitions
 ```
 
-**Installation**
-
-Install the project dependencies using npm:
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-**Set Up Environment Variables**
+---
 
-Create a new file named `.env` in the root of your project and add the following content:
+## Environment Variables
+
+Create a `.env` file in the project root:
 
 ```env
-# Server Configuration
 PORT=3000
 NODE_ENV=development
-LOG_LEVEL=info
 
-# Database Configuration
 DATABASE_URL=
 
-# Arcjet
+JWT_SECRET=
+
 ARCJET_KEY=
 ```
 
-Replace the placeholder values with your real credentials. You can get these by signing up at: [**Arcjet**](https://jsm.dev/dops25-arcjet), [**Neon**](https://jsm.dev/dops25-neon).
+---
 
-**Running the Project**
+## Running Locally
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+The application will be available at:
 
-## <a name="links">🔗 Assets</a>
+```text
+http://localhost:3000
+```
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/dops25-kit)**.
+---
 
-<a href="https://jsm.dev/dops25-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
+## Running with Docker
 
-## <a name="more">🚀 More</a>
+Build and run the application:
 
-**Advance your skills with Next.js Pro Course**
+```bash
+docker-compose up --build
+```
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+Stop containers:
 
-<a href="https://jsm.dev/dops25-jsm" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
+```bash
+docker-compose down
+```
+
+---
+
+## Testing
+
+Run unit and integration tests:
+
+```bash
+npm test
+```
+
+Generate coverage report:
+
+```bash
+npm run test:coverage
+```
+
+---
+
+## API Health Check
+
+Verify service availability:
+
+```http
+GET /health
+```
+
+Example Response:
+
+```json
+{
+  "status": "UP",
+  "timestamp": "2025-01-01T10:00:00Z"
+}
+```
+
+---
+
+## Project Structure
+
+```text
+src/
+├── controllers/
+├── routes/
+├── services/
+├── middleware/
+├── validations/
+├── db/
+├── utils/
+├── tests/
+└── app.js
+```
+
+---
+
+## CI/CD Workflow
+
+The project includes automated workflows for:
+
+- Dependency installation
+- Build validation
+- Automated testing
+- Code quality checks
+- Deployment readiness verification
+
+---
+
+## Learning Outcomes
+
+Through this project, I gained practical experience with:
+
+- REST API development
+- PostgreSQL database design
+- ORM-based data access patterns
+- JWT authentication
+- Docker containerization
+- CI/CD workflow implementation
+- Application logging and monitoring
+- Production-ready deployment practices
+- Troubleshooting and debugging backend systems
+
+---
+
+## Future Enhancements
+
+- Kubernetes deployment support
+- Prometheus and Grafana monitoring
+- OpenTelemetry distributed tracing
+- Infrastructure as Code using Terraform
+- Performance and load testing automation
+
+---
+
+## License
+
+This project is intended for educational and portfolio purposes.
